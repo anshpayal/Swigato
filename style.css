@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+}
+.header-container{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.logo{
+    margin-left: 65px;
+    margin-top: 5px;
+    height: 78px;
+    width: 85px;
+}
+.header-container>ul{
+    margin-right: 65px;
+    display: flex;
+}
+.header-container>ul>li{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 25px;
+    font-size: 17px;
+    font-weight: 550;
+    color: #5CA43D;
+    list-style-type: none;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+
+}
+.search-bar>input{
+    width: 550px;
+    margin: 30px;
+    border: 2px solid #5CA43D;
+    border-radius: 50px;
+}
+.search-bar>input[type=text] {
+    padding: 6px;
+    font-size: 14px;
+}
+
+.resturant-container{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.resturant-card{
+    margin: 60px;
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    border: 3px solid #5CA43D;
+    padding: 5px;
+}
+
+.resturant-card>img{
+    width: 100%;
+}

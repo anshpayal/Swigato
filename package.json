@@ -1,0 +1,20 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "- `npm init`, `git init`\r - `npm install -D parcel`\r - `npm install react`\r - `npm install react-dom`\r - Update script property inside package.json file.\r     ```\r     \"start\": \"parcel index.html\"\r     \"build\": \"parcel build index.html\"\r     ```\r - `npm start` command will run the code\r - `npm run build` command will build the production ready code.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Ansh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
