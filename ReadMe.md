@@ -21,9 +21,13 @@
     - Body
         - Search ✅
         - Resturants container ✅
-    - Footer
-        - Links
-        - Contacts
-        - Address
-        - Copyright.
-- For adding Inline CSS in react, we have to create object and then use inside the tag.
+
+### Concepts: 
+- Props ✅
+- Javascript map() function. ✅
+- Object destructing. ✅
+- Optional chaining. ✅
+- Keys ✅
+- Config driven UI ✅
+
+ 

@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDom from "react-dom";
+import ReactDom from "react-dom/client";
 import logo from "./logo.png";
 import "./style.css";
 
@@ -16,16 +16,123 @@ const Header = () => {
   );
 };
 
-const ResturantCard=()=>{
-  return(
+const ResturantCard = (props) => {
+  const{resturantData} = props;
+  const {cloudinaryImageId, name, avgRating, cuisines}=resturantData?.info;
+  return (
     <div className="resturant-card">
-      <img alt="resturant-img" src="data:image/jpeg;base64,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"/>
-      <h3>Resturant Name</h3>
-      <h4>Cusine</h4>
-      <h4>Rating</h4>
+      <img
+        alt="resturant-img"
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
+      />
+      <h3>{name}</h3>
+      <h4>{avgRating}</h4>
+      <h4>{cuisines.join(", ")}</h4>
     </div>
-  )
-}
+  );
+};
+
+const listOfresturant = [
+  {
+    info: {
+      id: "3369",
+      name: "Truffles",
+      cloudinaryImageId: "cd832b6167eb9f88aeb1ccdebf38d942",
+      locality: "St. Marks Road",
+      areaName: "St. Marks Road",
+      costForTwo: "₹450 for two",
+      cuisines: ["American", "Desserts", "Continental", "Italian"],
+      avgRating: 4.6,
+    }
+  },
+  {
+    info: {
+      id: "503961",
+      name: "Istah - The Mediterranean Way",
+      cloudinaryImageId: "9a01f2935fcb5ae05426db8264062102",
+      locality: "Akkithimanahalli",
+      areaName: "Santhi Nagar",
+      costForTwo: "₹250 for two",
+      cuisines: [
+        "Mediterranean",
+        "Snacks",
+        "Biryani",
+        "Grill",
+        "Kebabs",
+        "Arabian",
+        "Lebanese",
+        "Beverages",
+        "Desserts",
+        "Italian",
+        "Turkish",
+      ],
+      avgRating: 4.5,
+    },
+  },
+  {
+    info: {
+      id: "10575",
+      name: "Pizza Hut",
+      cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+      locality: "Shanti Nagar",
+      areaName: "Shanti Nagar",
+      costForTwo: "₹600 for two",
+      cuisines: ["Pizzas"],
+      avgRating: 4.1,
+    },
+  },
+  {
+    info: {
+      id: "30531",
+      name: "Hotel Empire",
+      cloudinaryImageId: "qltgnkyywuo5gmnpqzbm",
+      locality: "Brigade Road",
+      areaName: "Church Street",
+      costForTwo: "₹450 for two",
+      cuisines: ["North Indian", "Kebabs", "Biryani"],
+      avgRating: 4.4,
+    },
+  },
+  {
+    info: {
+      id: "5938",
+      name: "Burger King",
+      cloudinaryImageId: "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+      locality: "Tasker Town",
+      areaName: "Shivaji Nagar",
+      costForTwo: "₹350 for two",
+      cuisines: ["Burgers", "American"],
+      avgRating: 4.2,
+    },
+  },
+  {
+    info: {
+      id: "347868",
+      name: "KFC",
+      cloudinaryImageId: "f01666ac73626461d7455d9c24005cd4",
+      locality: "Cunnigham road",
+      areaName: "Vasanth Nagar",
+      costForTwo: "₹400 for two",
+      cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+      avgRating: 4,
+    },
+  },
+  {
+    info: {
+      id: "43836",
+      name: "McDonald's",
+      cloudinaryImageId: "bb7ae131544c7d37e10fc5faf76f09d6",
+      locality: "MG Road",
+      areaName: "Ashok Nagar",
+      costForTwo: "₹400 for two",
+      cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
+      avgRating: 4.2,
+    },
+  },
+];
 
 const Body = () => {
   return (
@@ -34,14 +141,9 @@ const Body = () => {
         <input type="text" placeholder="Search"></input>
       </div>
       <div className="resturant-container">
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
-        <ResturantCard/>
+        {listOfresturant.map((resturants)=>{
+          return <ResturantCard key={resturants.info.id} resturantData={resturants}/>
+        })}
       </div>
     </div>
   );
