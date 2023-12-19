@@ -1,40 +1,3 @@
-import React from "react";
-import ReactDom from "react-dom/client";
-import logo from "./logo.png";
-import "./style.css";
-
-const Header = () => {
-  return (
-    <div className="header-container">
-      <img className="logo" alt="Logo" src={logo} />
-      <ul>
-        <li>HOME</li>
-        <li>ABOUT</li>
-        <li>CART</li>
-      </ul>
-    </div>
-  );
-};
-
-const ResturantCard = (props) => {
-  const{resturantData} = props;
-  const {cloudinaryImageId, name, avgRating, cuisines}=resturantData?.info;
-  return (
-    <div className="resturant-card">
-      <img
-        alt="resturant-img"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{avgRating}</h4>
-      <h4>{cuisines.join(", ")}</h4>
-    </div>
-  );
-};
-
 const listOfresturant = [
   {
     info: {
@@ -46,7 +9,7 @@ const listOfresturant = [
       costForTwo: "₹450 for two",
       cuisines: ["American", "Desserts", "Continental", "Italian"],
       avgRating: 4.6,
-    }
+    },
   },
   {
     info: {
@@ -134,29 +97,4 @@ const listOfresturant = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body-container">
-      <div className="search-bar">
-        <input type="text" placeholder="Search"></input>
-      </div>
-      <div className="resturant-container">
-        {listOfresturant.map((resturants)=>{
-          return <ResturantCard key={resturants.info.id} resturantData={resturants}/>
-        })}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDom.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default listOfresturant;
