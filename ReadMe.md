@@ -19,8 +19,9 @@
         - logo ✅
         - Nav items ✅
     - Body
-        - Search ✅
+        - Search 
         - Resturants container ✅
+        - Filter button (filter out top rated resturants) ✅
 
 ### Concepts: 
 - Props ✅
@@ -29,5 +30,9 @@
 - Optional chaining. ✅
 - Keys ✅
 - Config driven UI ✅
+- Restructure the app ✅
+- useState hook ✅
+- Virtual DOM, Reconciliation and React fiber ✅
+
 
  

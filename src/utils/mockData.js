@@ -1,4 +1,4 @@
-const listOfresturant = [
+const resList = [
   {
     info: {
       id: "3369",
@@ -8,7 +8,7 @@ const listOfresturant = [
       areaName: "St. Marks Road",
       costForTwo: "₹450 for two",
       cuisines: ["American", "Desserts", "Continental", "Italian"],
-      avgRating: 4.6,
+      avgRating: 3.5,
     },
   },
   {
@@ -56,7 +56,7 @@ const listOfresturant = [
       areaName: "Church Street",
       costForTwo: "₹450 for two",
       cuisines: ["North Indian", "Kebabs", "Biryani"],
-      avgRating: 4.4,
+      avgRating: 3.0,
     },
   },
   {
@@ -80,7 +80,7 @@ const listOfresturant = [
       areaName: "Vasanth Nagar",
       costForTwo: "₹400 for two",
       cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
-      avgRating: 4,
+      avgRating: 3.6,
     },
   },
   {
@@ -97,4 +97,4 @@ const listOfresturant = [
   },
 ];
 
-export default listOfresturant;
+export default resList;
