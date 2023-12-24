@@ -30,7 +30,6 @@ body{
 .search-bar{
     display: flex;
     justify-content: center;
-
 }
 .search-bar>input{
     width: 550px;
@@ -61,6 +60,7 @@ body{
 
 .resturant-container{
     display: flex;
+    justify-content: center;
     padding: 20px;
     flex-wrap: wrap;
 }
@@ -69,9 +69,39 @@ body{
     width: 200px;
     border-radius: 10px;
     border: 3px solid #5CA43D;
+    background-color: #97da7a;
     padding: 5px;
 }
 
 .resturant-card>img{
     width: 100%;
+}
+
+.search-shimmer-container{
+    display: flex;
+    justify-content: center;
+}
+
+.search-shimmer{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    width: 550px;
+    height: 22px;
+    margin: 30px;
+    border-radius: 50px;
+}
+
+.cards-shimmer-container{
+    display: flex;
+    justify-content: center;
+}
+
+.cards-shimmer{
+    background-color: lightgray;
+    margin: 60px;
+    width: 200px;
+    height: 400px;
+    border-radius: 10px;
+
 }

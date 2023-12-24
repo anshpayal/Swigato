@@ -5,7 +5,6 @@ import Body from "./components/Body";
 import "../style.css";
 
 const AppLayout = () => {
-  console.log(<Body/>)
   return (
     <div className="app">
       <Header />
