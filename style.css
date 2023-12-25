@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .header-container{
     display: flex;
@@ -12,7 +13,7 @@ body{
     margin-left: 65px;
     margin-top: 5px;
     height: 78px;
-    width: 85px;
+    width: 78px;
 }
 .header-container>ul{
     margin-right: 65px;
@@ -23,14 +24,13 @@ body{
     margin: 25px;
     font-size: 17px;
     font-weight: 550;
-    color: #5CA43D;
+    color: #bc6c25;
     list-style-type: none;
 }
 .login-btn{
     height: 40px;
     width: 80px;
-    background-color: #5CA43D; /* Green */
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bc6c25;
     font-size: 14px;
     font-weight: 550;
     border: none;
@@ -49,7 +49,7 @@ body{
 .search-bar>input{
     width: 550px;
     margin-top: 25px;
-    border: 2px solid #5CA43D;
+    border: 2px solid #bc6c25;
     border-radius: 30px 0px 0px 30px;
 }
 .search-bar>input[type=text] {
@@ -61,14 +61,15 @@ body{
     width: 80px;
     margin-top: 25px;
     border-radius: 0px 30px 30px 0px;
-    border: 2px solid #5CA43D;
+    border: 2px solid #bc6c25;
     background-color: white;
     cursor: pointer;
 }
 
 .filter-btn {
+    font-family: Arial, Helvetica, sans-serif;
     height: 50px;
-    background-color: #5CA43D; /* Green */
+    background-color: #bc6c25;
     border: none;
     padding: 15px;
     border-radius: 10px;
@@ -78,26 +79,30 @@ body{
     display: inline-block;
     font-size: 14px;
     margin-top: 20px;
-    margin-left: 85px;
+    margin-left: 140px;
     cursor: pointer;
 }
 
 .resturant-container{
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 0px;
     flex-wrap: wrap;
 }
 .resturantcard-img{
     height: 150px;
+    border-radius: 10px 10px 10px 10px;
 }
 .resturant-card{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
     margin: 60px;
     width: 200px;
     border-radius: 10px;
-    border: 3px solid #5CA43D;
-    background-color: #97da7a;
-    padding: 5px;
+    background-color: #bc6c25;
+    color: white;
+    padding: 8px;
 }
 .resturant-card>img{
     width: 100%;

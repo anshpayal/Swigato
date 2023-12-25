@@ -1,4 +1,4 @@
-import logo from "../../logo.png";
+import logo from "../../logo (2).png";
 import { useState } from "react";
 
 const Header = () => {
