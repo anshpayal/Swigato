@@ -18,12 +18,14 @@
     - Header
         - logo ✅
         - Nav items ✅
+        - Login/Logout toggle button ✅
     - Body
         - Search 
         - Resturants container ✅
         - Filter button (filter out top rated resturants) ✅
         - Shimmer UI ✅
-        - Login/Logout toggle button ✅
+        - Search Bar ✅
+        
 
 ### Concepts: 
 - Props ✅
