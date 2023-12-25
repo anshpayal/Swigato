@@ -26,6 +26,18 @@ body{
     color: #5CA43D;
     list-style-type: none;
 }
+.login-btn{
+    height: 40px;
+    width: 70px;
+    background-color: #5CA43D; /* Green */
+    border: none;
+    margin: 15px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 .search-bar{
     display: flex;
@@ -81,7 +93,6 @@ body{
     display: flex;
     justify-content: center;
 }
-
 .search-shimmer{
     display: flex;
     justify-content: center;
@@ -91,17 +102,14 @@ body{
     margin: 30px;
     border-radius: 50px;
 }
-
 .cards-shimmer-container{
     display: flex;
     justify-content: center;
 }
-
 .cards-shimmer{
     background-color: lightgray;
     margin: 60px;
     width: 200px;
     height: 400px;
     border-radius: 10px;
-
 }

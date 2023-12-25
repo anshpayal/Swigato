@@ -23,6 +23,7 @@
         - Resturants container ✅
         - Filter button (filter out top rated resturants) ✅
         - Shimmer UI ✅
+        - Login/Logout toggle button ✅
 
 ### Concepts: 
 - Props ✅
