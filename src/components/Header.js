@@ -2,7 +2,7 @@ import logo from "../../logo.png";
 import { useState } from "react";
 
 const Header = () => {
-  const [btnName, setbtnName] = useState("Login");
+  const [btnName, setbtnName] = useState("LOGIN");
   return (
     <div className="header-container">
       <img className="logo" alt="Logo" src={logo} />
@@ -13,11 +13,11 @@ const Header = () => {
         <button
           className="login-btn"
           onClick={() => {
-            if(btnName==="Login"){
-              setbtnName("Logout");
+            if(btnName==="LOGIN"){
+              setbtnName("LOGOUT");
             }
             else(
-              setbtnName("Login")
+              setbtnName("LOGIN")
             )
           }}
         >
