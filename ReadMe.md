@@ -22,7 +22,7 @@
         - Login/Logout toggle button ✅
     - Body
         - Resturants container ✅
-            - Resturant Menu 
+            - Resturant Menu ✅
         - Filter button (filter out top rated resturants) ✅
         - Shimmer UI ✅
         - Search Bar ✅
@@ -39,8 +39,8 @@
 - Virtual DOM, Reconciliation and React fiber ✅
 - useEffect hook ✅
 - CORS Policy (when are browser block us to call api from one orgin(Local host) to different origin(swiggy api)) ✅
-- Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component 
-- Dynamic Routing
+- Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component ✅
+- Dynamic Routing (useParams hook) ✅
 
 
 
