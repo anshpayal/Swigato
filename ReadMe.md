@@ -3,6 +3,7 @@
 - `npm install -D parcel`
 - `npm install react`
 - `npm install react-dom`
+- `npm i react-router-dom`
 - Update script property inside package.json file.
     ```
     "start": "parcel index.html"
@@ -20,8 +21,8 @@
         - Nav items ✅
         - Login/Logout toggle button ✅
     - Body
-        - Search 
         - Resturants container ✅
+            - Resturant Menu 
         - Filter button (filter out top rated resturants) ✅
         - Shimmer UI ✅
         - Search Bar ✅
@@ -38,7 +39,8 @@
 - Virtual DOM, Reconciliation and React fiber ✅
 - useEffect hook ✅
 - CORS Policy (when are browser block us to call api from one orgin(Local host) to different origin(swiggy api)) ✅
-- Routing (createRouterBrowser, RouterProvider)
+- Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component 
+- Dynamic Routing
 
 
 
