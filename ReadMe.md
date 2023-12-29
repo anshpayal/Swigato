@@ -41,7 +41,8 @@
 - CORS Policy (when are browser block us to call api from one orgin(Local host) to different origin(swiggy api)) ✅
 - Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component ✅
 - Dynamic Routing (useParams hook) ✅
-
+- Class based components, props, State variable, lifecyle of class components ✅
+ 
 
 
  
