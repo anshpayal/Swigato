@@ -10,8 +10,27 @@
     "build": "parcel build index.html"
     ```
 - `npm start` command will run the code
-- `npm run build` command will build the production ready code.
+- `npm run build` command will build the production ready code. 
 
+### Configuration of Tailwind CSS:
+- `npm install -D tailwindcss postcss`: Installing tailwind and postcss as dev dependency, postcss transform css inside javascript.
+- `npx tailwind init`: it configure talinwind.config.js file.
+- create `.postcssrc` file in root repo. 
+    ```
+    {
+    "plugins": {
+        "tailwindcss": {}
+    }
+    }
+    ```
+- Inside `tailwind.config.js` file, content property tells in which file we can use tailwind.
+- Add tailwind directives inside index.css file
+    ```
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+- Download `Tailwind CSS IntelliSense` extension for VS Code. 
 ### Building Food Ordering App:
 - Design a rough wireframe or mock. How the app will look like?
 - Now try to break down the wireframe into components.
