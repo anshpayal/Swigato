@@ -1,0 +1,26 @@
+{
+  "name": "swigato",
+  "version": "1.0.0",
+  "description": "Food ordering web app",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Ansh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "postcss": "^8.4.32",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.21.1",
+    "tailwindcss-filters": "^3.0.0"
+  }
+}
