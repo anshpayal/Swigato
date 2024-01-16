@@ -12,8 +12,8 @@
     - [x] Cart page, Remove items, Clear cart, Bill Details
 
 - Features to be added soon:
-    - [] Firebase setup for authentication.
-    - [] Integration of AI to suggest meals.  
+    - [ ] Firebase setup for authentication.
+    - [ ] Integration of AI to suggest meals.  
 
 ## Configurations for the project:
 - `npm init`, `git init`
@@ -54,28 +54,28 @@
 - `npm install react-redux`
 
 ## Concepts learned while building: 
-[x] Props
-[x] Javascript map() and filter() function.
-[x] Object destructing. 
-[x] Optional chaining. 
-[x] Condtional Rendering
-[x] Importance of Keys in map function
-[x] Config driven UI 
-[x] Restructure the app 
-[x] useState hook 
-[x] Virtual DOM, Reconciliation and React fiber 
-[x] useEffect hook 
-[x] CORS Policy (when are browser block us to call api from one orgin(Local host) to different origin(swiggy api)) 
-[x] Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component 
-[x] Dynamic Routing (useParams hook) 
-[x] Class based components, props, State variable, lifecyle of class components 
-[x] Single Responsibilty Principle 
-[x] Custom Hooks 
-[x] Optimizing App using Lazy Loading 
-[x] High Order Components (HOC) 
-[x] Lifting the state up, Controlled and Uncontrolled components 
-[ ] Props driling and Context(createContext, useContext, Provider) 
-[x] Redux store, Slice, Dispatch(action), Reducer, Selector 
+- [x] Props
+- [x] Javascript map() and filter() function.
+- [x] Object destructing. 
+- [x] Optional chaining. 
+- [x] Condtional Rendering
+- [x] Importance of Keys in map function
+- [x] Config driven UI 
+- [x] Restructure the app 
+- [x] useState hook 
+- [x] Virtual DOM, Reconciliation and React fiber 
+- [x] useEffect hook 
+- [x] CORS Policy (when are browser block us to call api from one orgin(Local host) to different origin(swiggy api)) 
+- [x] Routing (createRouterBrowser, RouterProvider), Children Routes (Outlet), Link component 
+- [x] Dynamic Routing (useParams hook) 
+- [x] Class based components, props, State variable, lifecyle of class components 
+- [x] Single Responsibilty Principle 
+- [x] Custom Hooks 
+- [x] Optimizing App using Lazy Loading 
+- [x] High Order Components (HOC) 
+- [x] Lifting the state up, Controlled and Uncontrolled components 
+- [ ] Props driling and Context(createContext, useContext, Provider) 
+- [x] Redux store, Slice, Dispatch(action), Reducer, Selector 
 
 
  
