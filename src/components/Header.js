@@ -1,12 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Logo from "../../Logo.png";
+import { removeUser } from "../utils/userSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const user = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-  return ( 
+  const handleLogout = () => {
+    dispatch(removeUser());
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+
+  if (location.pathname === "/login") {
+    return null; // Don't render the header on the login page
+  }
+
+  return (
     <div className=" flex justify-between shadow-lg ">
       <Link to="/">
         <img
@@ -34,12 +55,20 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <Link to="/login">
+        {user ? (
           <button
-            className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400" >
-            Login
+            className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400"
+            onClick={handleLogout}
+          >
+            Logout
           </button>
-        </Link>
+        ) : (
+          <Link to="/login">
+            <button className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

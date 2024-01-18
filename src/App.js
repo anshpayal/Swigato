@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDom from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
 import { lazy } from "react";
 import { Provider, useDispatch } from "react-redux";
 import { addUser, removeUser } from "./utils/userSlice";
@@ -33,7 +33,9 @@ const App = () => {
         dispatch(removeUser());
       }
     });
-  }, []);
+  }, [dispatch]);
+
+  const hideHeader = location.pathname === '/login';
   return (
     <Provider store={appStore}>
         <div className="App">
