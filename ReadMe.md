@@ -10,9 +10,9 @@
     - [x] Routing, Dynamic Routing
     - [x] Resturant Menu, Menu Accordion, Add Items
     - [x] Cart page, Remove items, Clear cart, Bill Details
+    - [x] Firebase setup for authentication.
 
 - Features to be added soon:
-    - [ ] Firebase setup for authentication.
     - [ ] Dark mode
 
 ## Configurations for the project:
