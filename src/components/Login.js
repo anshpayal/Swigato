@@ -1,17 +1,23 @@
 import React from "react";
-import { useState, useRef} from "react";
+import { useState, useRef } from "react";
 import Logo from "../../Login-Logo.png";
 import { validationCheck } from "../utils/validationCheck";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import LoginBtnContext from "../utils/LoginBtnContext";
+import { addUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
-  const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const email = useRef(null);
   const password = useRef(null);
@@ -35,6 +41,20 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: fullName.current.value,
+          })
+            .then(() => {
+              // Profile updated!
+              const { uid, email, displayName } = auth.currentUser;
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName})
+              );
+            })
+            .catch((error) => {
+              // An error occurred
+              // ...
+            });
           console.log("sign up successful", user);
           setSignIn(true);
         })
@@ -106,7 +126,7 @@ const Login = () => {
           />
           <p className="text-red-600 font-semibold my-1">{errorMessage}</p>
           <button
-            className=" bg-orange-500 rounded-lg shadow-lg text-white text-lg font-bold py-3 my-4 w-full"
+            className=" bg-orange-500 rounded-lg shadow-lg text-white text-lg font-bold py-3 my-4 w-full  hover:bg-orange-400"
             onClick={handleValidation}
           >
             {signIn ? "Login" : "Sign Up"}

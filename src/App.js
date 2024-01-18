@@ -14,8 +14,7 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/Login";
 import Cart from "./components/Cart";
 import appStore from "./utils/appStore";
-import LoginBtnContext from "./utils/LoginBtnContext";
-
+import Footer from "./components/Footer";
 const Offers = lazy(() => import("./components/Offers"));
 
 const App = () => {
@@ -41,6 +40,7 @@ const App = () => {
         <div className="App">
           <Header />
           <Outlet />
+          <Footer/>
         </div>
     </Provider>
   );

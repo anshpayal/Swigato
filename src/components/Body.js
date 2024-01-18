@@ -45,7 +45,7 @@ const Body = () => {
   const restaurantsToDisplay =
     filterBySearch || filterRestaurants || intialrestaurantsData;
   return (
-    <div >
+    <div>
       <div className=" py-7 font-medium ">
         <div className=" mx-auto w-3/6  flex ">
           <input

@@ -17,10 +17,10 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex max-h-screen">
       <div className="w-4/12 p-3 mx-auto my-8 border-2 border-gray-400 rounded-lg text-center">
         <h1 className="font-bold text-2xl my-4">Cart Items</h1>
-        <div className="p-4 overflow-auto max-h-[400px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
+        <div className="p-4 overflow-auto h-[400px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
           {itemsInCart.length === 0 ? (
             <p>Cart is empty add items to the cart!</p>
           ) : (

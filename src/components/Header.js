@@ -29,15 +29,20 @@ const Header = () => {
 
   return (
     <div className=" flex justify-between shadow-lg ">
+      <div className="flex items-center">
       <Link to="/">
         <img
-          className="logo w-[85px] h-[100px] mx-20 my-4 rounded-2xl "
+          className="logo w-8/12 h-[75px] ml-20  my-4 rounded-3xl "
           alt="Logo"
           src={Logo}
         />
       </Link>
+      {
+        user && <span className="text-orange-500 font-semibold mx-8 text-xl">Welcome! {user?.displayName}</span>
+      }
+      </div>
       <div className="nav-container flex items-center ">
-        <ul className="nav-items flex text-lg font-medium text-gray-700">
+        <ul className="nav-items flex text-xl font-medium text-gray-700">
           <li className="mx-6">
             <Link to="/">Home</Link>
           </li>
@@ -57,14 +62,14 @@ const Header = () => {
         </ul>
         {user ? (
           <button
-            className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400"
+            className="ml-2 mr-20 px-5 py-2 text-xl font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400"
             onClick={handleLogout}
           >
             Logout
           </button>
         ) : (
           <Link to="/login">
-            <button className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400">
+            <button className="ml-2 mr-20 px-5 py-2 text-xl font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400">
               Login
             </button>
           </Link>
