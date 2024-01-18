@@ -53,6 +53,20 @@
 - `npm install @reduxjs/toolkit`
 - `npm install react-redux`
 
+### Configuration of Firebase:
+- Visit firebase website -> get started -> create new project
+- Name it -> Enable google analytics -> choose google account -> Create Project
+- Select web project -> Register app -> if you want to host application check the box -> Register
+- Add Fierbase SDK -> select use npm
+- Go to your project repository and run command `npm intall firebase`
+- Create a new file `firebase.js` copy the code given by firebase. 
+- Install firebase CLI if you want to host the site `npm install -g firebase-tools`
+- Commands to deploy the code to firebase hosting (if you are ready to deploy otherwise can skip this):
+    - `firebase login` : sign to google account
+    - `firebase init` : initiate the project
+    - `firebase deploy`: to deploy the code
+- Enable Authentication -> sign methods -> select according to project need. 
+
 ## Concepts learned while building: 
 - [x] Props
 - [x] Javascript map() and filter() function.
