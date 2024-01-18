@@ -2,6 +2,11 @@ import React from "react";
 import { useState, useRef } from "react";
 import Logo from "../../Login-Logo.png";
 import { validationCheck } from "../utils/validationCheck";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
@@ -9,15 +14,44 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
-  const fullName = useRef(null);
 
   const handleValidation = () => {
     const message = validationCheck(
       email.current.value,
-      password.current.value,
-      fullName.current.value
+      password.current.value
     );
     setErrorMessage(message);
+    if (message) return;
+
+    if (!signIn) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("sign up successful", user);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+          console.log(errorMessage);
+        });
+    } else {
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log("sign in successful", user);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+          console.log(errorMessage);
+        });
+    }
   };
   const handleClick = () => {
     setSignIn(!signIn);
@@ -43,7 +77,6 @@ const Login = () => {
           </h1>
           {!signIn && (
             <input
-              ref={fullName}
               type="text"
               placeholder="Full Name"
               className="my-2 px-2 py-3 w-full rounded-lg outline-none "
