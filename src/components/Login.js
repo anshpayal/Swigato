@@ -14,11 +14,13 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
+  const fullName = useRef(null);
 
   const handleValidation = () => {
     const message = validationCheck(
       email.current.value,
-      password.current.value
+      password.current.value,
+      fullName?.current?.value
     );
     setErrorMessage(message);
     if (message) return;
@@ -40,7 +42,11 @@ const Login = () => {
           console.log(errorMessage);
         });
     } else {
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
@@ -77,6 +83,7 @@ const Login = () => {
           </h1>
           {!signIn && (
             <input
+              ref={fullName}
               type="text"
               placeholder="Full Name"
               className="my-2 px-2 py-3 w-full rounded-lg outline-none "
