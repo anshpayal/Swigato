@@ -13,7 +13,7 @@
 
 - Features to be added soon:
     - [ ] Firebase setup for authentication.
-    - [ ] Integration of AI to suggest meals.  
+    - [ ] Dark mode
 
 ## Configurations for the project:
 - `npm init`, `git init`
@@ -90,6 +90,7 @@
 - [x] Lifting the state up, Controlled and Uncontrolled components 
 - [ ] Props driling and Context(createContext, useContext, Provider) 
 - [x] Redux store, Slice, Dispatch(action), Reducer, Selector 
+- [x] Authentication using firebase, hosting using firebase, 
 
 
  
