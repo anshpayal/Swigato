@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
   // type.googleapis.com/swiggy.presentation.food.v2.ItemCategory
   //console.log(cards);
   return (
-    <div className="p-10 h-screen">
+    <div className="p-10">
       <div className=" bg-gray-100 border-2 border-gray-500 w-3/6 mx-auto p-3 rounded-xl ">
         <h1 className="my-1 text-center text-4xl font-bold">Menu 📜</h1>
         <div className=" p-3  flex justify-between items-center border-b-2 border-gray-400 ">
