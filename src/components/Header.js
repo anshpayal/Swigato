@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import Logo from "../../Logo.png";
+
 const Header = () => {
-  const [btnName, setBtnName] = useState("Login");
   const cartItems = useSelector((store) => store.cart.items);
-  //console.log(cartItems);
-  return (
+
+  return ( 
     <div className=" flex justify-between shadow-lg ">
       <Link to="/">
         <img
@@ -35,18 +34,12 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <button
-          className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400"
-          onClick={() => {
-            if (btnName === "Login") {
-              setBtnName("Logout");
-            } else {
-              setBtnName("Login");
-            }
-          }}
-        >
-          {btnName}
-        </button>
+        <Link to="/login">
+          <button
+            className="ml-4 mr-20 px-5 py-2 text-lg font-medium text-white rounded-lg bg-orange-500 hover:bg-orange-400" >
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );

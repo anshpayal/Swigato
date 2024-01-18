@@ -1,16 +1,17 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef} from "react";
 import Logo from "../../Login-Logo.png";
 import { validationCheck } from "../utils/validationCheck";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import LoginBtnContext from "../utils/LoginBtnContext";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
+  const navigate = useNavigate();
+
 
   const email = useRef(null);
   const password = useRef(null);
@@ -35,6 +36,7 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           console.log("sign up successful", user);
+          setSignIn(true);
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -51,6 +53,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log("sign in successful", user);
+          navigate("/");
         })
         .catch((error) => {
           const errorMessage = error.message;

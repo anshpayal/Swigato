@@ -1,8 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDom from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { lazy } from "react";
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
+import { addUser, removeUser } from "./utils/userSlice";
+import { auth } from "./utils/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 import "../index.css";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -11,16 +14,32 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/Login";
 import Cart from "./components/Cart";
 import appStore from "./utils/appStore";
+import LoginBtnContext from "./utils/LoginBtnContext";
 
 const Offers = lazy(() => import("./components/Offers"));
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+      }
+    });
+  }, []);
   return (
     <Provider store={appStore}>
-      <div className="App">
-        <Header />
-        <Outlet />
-      </div>
+        <div className="App">
+          <Header />
+          <Outlet />
+        </div>
     </Provider>
   );
 };
@@ -50,15 +69,19 @@ const appRouter = createBrowserRouter([
         path: "/restaurants/:resID",
         element: <RestaurantMenu />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
     ],
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
 ]);
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 //root.render(<App/>);
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Provider store={appStore}>
+    <RouterProvider router={appRouter} />
+  </Provider>
+);
