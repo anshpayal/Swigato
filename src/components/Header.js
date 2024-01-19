@@ -16,10 +16,10 @@ const Header = () => {
     dispatch(removeUser());
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        console.log("Signout successful");
       })
       .catch((error) => {
-        // An error happened.
+        console.log(error);
       });
   };
 
