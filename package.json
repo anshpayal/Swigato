@@ -2,7 +2,6 @@
   "name": "swigato",
   "version": "1.0.0",
   "description": "Food ordering web app",
-  "main": "src/App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"

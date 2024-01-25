@@ -44,6 +44,7 @@ const Body = () => {
   }
   const restaurantsToDisplay =
     filterBySearch || filterRestaurants || intialrestaurantsData;
+    //console.log(restaurantsToDisplay)
   return (
     <div>
       <div className=" py-7 font-medium ">
